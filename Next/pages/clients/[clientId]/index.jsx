@@ -7,4 +7,4 @@ const ClientProjects = () => {
   return <h1>The Projects of a Given Client</h1>;
 };
 
-export default ClientProjects; //http://localhost:3000/Clients/thiago
+export default ClientProjects; //http://localhost:3000/clients/thiago

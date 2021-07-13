@@ -11,4 +11,4 @@ const SelectedClientProject = () => {
   );
 };
 
-export default SelectedClientProject; //http://localhost:3000/Clients/thiago/projectone
+export default SelectedClientProject; //http://localhost:3000/clients/thiago/projectone

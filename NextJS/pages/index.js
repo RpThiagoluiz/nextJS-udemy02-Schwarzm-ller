@@ -16,6 +16,7 @@ function HomePage(props) {
   );
 }
 
+//!important Roda um build, e vai em server - pages - e ve oq virou depois roda um yarn start pra ele rodar em cima do build, pra ve se ta tudo la.
 export const getStaticProps = async () => {
   //fs -> file system - tbm vem do node
   //path - caminho do arquivo, ele vem do node
@@ -25,7 +26,23 @@ export const getStaticProps = async () => {
   // readFileSync, ele vai ler o arquivo de forma async
   //const jsonData = await fs.readFileSync(filePath); // leia esse arquivo
   //Nao precisa mais, pode passar diretamente pelo import.
-  const data = dataDummy; //Sua duvida que vc tinha, ve o aruivo antes, e vc sabe q aq ele vai virar um obj.
+  //const data = JSON.Parse(jsonData)  Sua duvida que vc tinha, ve o aruivo antes, e vc sabe q aq ele vai virar um obj.
+
+  const data = dataDummy;
+  console.log("Re-Generating..."); //com o tempo do revalidade ele vai re fazer o back, e os components.
+
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/no-data",
+      },
+    };
+  }
+
+  //Se nao houver produto, ele retornar pagina nao encontrada. Lembrando q vc pode customizar a pagina.
+  if (data.products.length === 0) {
+    return { notFound: true };
+  }
 
   return {
     props: {
@@ -35,6 +52,7 @@ export const getStaticProps = async () => {
       //   { id: "p2", title: "product02" },
       // ],
     },
+    revalidate: 5,
   };
 };
 

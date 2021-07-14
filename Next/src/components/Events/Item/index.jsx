@@ -21,7 +21,7 @@ export const EventItem = ({ item }) => {
   return (
     <li className={styles.item}>
       <img
-        src={item.image}
+        src={`/` + item.image}
         alt={`Imagem do local ${item.title} reprensentado.`}
       />
       <div className={styles.content}>

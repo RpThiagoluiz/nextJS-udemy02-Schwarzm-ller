@@ -1,22 +1,35 @@
+import { useRef } from "react";
 import { Button } from "../../Button";
 import styles from "./styles.module.css";
 
-export const EventsSearch = () => {
+export const EventsSearch = ({ onSearch }) => {
   //!important label se conecta com o select, pelo id e o htmlFor com o msm nome
 
+  const yearInputRef = useRef();
+  const monthInputRef = useRef();
+
+  const handlerSubmitted = (event) => {
+    event.preventDefault();
+    const selectedYear = yearInputRef.current.value;
+    const selectedMonth = monthInputRef.current.value;
+    //pega os valores e passar para o component que vai utilizalos
+
+    onSearch(selectedYear, selectedMonth);
+  };
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handlerSubmitted}>
       <div className={styles.controls}>
         <div className={styles.control}>
           <label htmlFor="year">Year</label>
-          <select name="" id="year">
+          <select name="" id="year" ref={yearInputRef}>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
           </select>
         </div>
         <div className={styles.control}>
           <label htmlFor="month">Month</label>
-          <select name="" id="month">
+          <select name="" id="month" ref={monthInputRef}>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>

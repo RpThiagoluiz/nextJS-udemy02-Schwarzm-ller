@@ -13,7 +13,7 @@ export const Button = ({ link, onClick, children }) => {
   }
 
   return (
-    <button className={styles.btn} onClick={onClick}>
+    <button type="submit" className={styles.btn} onClick={onClick}>
       {children}
     </button>
   );

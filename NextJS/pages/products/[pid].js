@@ -1,4 +1,4 @@
-import dataDummy from "../data/dummy-backend.json";
+import dataDummy from "../../data/dummy-backend.json";
 
 const ProductDetailPage = (props) => {
   //Normal seria vc fazer um useEffect aq, contudo quando chegar aq ainda nao vai ter o conteudo, e ele monta depois quando for acesso, igual oReact, logo os SEO nao acham o conteudo.

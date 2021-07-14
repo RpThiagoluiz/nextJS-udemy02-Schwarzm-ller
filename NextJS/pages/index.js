@@ -1,3 +1,4 @@
+import Link from "next/link";
 import dataDummy from "../data/dummy-backend.json";
 
 function HomePage(props) {
@@ -10,7 +11,9 @@ function HomePage(props) {
   return (
     <ul>
       {products.map((p) => (
-        <li key={p.id}>{p.title}</li>
+        <li key={p.id}>
+          <Link href={`/${p.id}`}>{p.title}</Link>
+        </li>
       ))}
     </ul>
   );

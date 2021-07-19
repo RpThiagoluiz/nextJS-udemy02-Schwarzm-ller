@@ -1,15 +1,12 @@
-import { Fragment } from "react";
-import { useRouter } from "next/router";
+import { Fragment } from 'react';
+import { useRouter } from 'next/router';
 
-//import { getAllEvents } from '../../dummy-data';
-import { getAllEvents } from "../../helpers/api-util";
-import EventList from "../../components/events/event-list";
-import EventsSearch from "../../components/events/events-search";
+import { getAllEvents } from '../../helpers/api-util';
+import EventList from '../../components/events/event-list';
+import EventsSearch from '../../components/events/events-search';
 
 function AllEventsPage(props) {
   const router = useRouter();
-  // const events = getAllEvents();
-
   const { events } = props;
 
   function findEventsHandler(year, month) {
@@ -26,15 +23,15 @@ function AllEventsPage(props) {
   );
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const events = await getAllEvents();
 
   return {
     props: {
-      events,
+      events: events,
     },
-    revalidate: 60, // 1min
+    revalidate: 60
   };
-};
+}
 
 export default AllEventsPage;

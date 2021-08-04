@@ -1,0 +1,10 @@
+
+POST http://localhost:3000/api/comments/e2
+Content-Type: application/json
+
+
+{
+  "name": "ChicoTripe",
+  "email": "chicaoHotNoBollet@gmail.com",
+  "text": "Foi de boas doido."
+}

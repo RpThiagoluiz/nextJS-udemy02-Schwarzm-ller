@@ -1,0 +1,7 @@
+//Virgula ali no json.
+POST http://localhost:3000/api/newsletter
+Content-Type: application/json
+
+{
+  "email": "terraplanista@gmail.com"
+} 

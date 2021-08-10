@@ -10,7 +10,7 @@ const handler = async (req, res) => {
 
     //transformar em Async/Await
     // MongoClient.connect(
-    //   `mongodb+srv://rpthiagoluiz:thiago25@cluster0.ce9ws.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    //   ``
     // ).then((client) => {
     //   const db = client.db();
     //   //Insert JS obj

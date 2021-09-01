@@ -1,11 +1,11 @@
 import { PostItem } from "../item";
 import styles from "./styles.module.css";
 
-export const PostGrid = ({ posts }) => {
+export const PostsGrid = ({ posts }) => {
   return (
     <ul className={styles.grid}>
       {posts.map((post) => (
-        <PostItem post={post} />
+        <PostItem key={post.slug} post={post} />
       ))}
     </ul>
   );
